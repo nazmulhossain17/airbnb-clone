@@ -4,9 +4,12 @@ import Avater from "../Avatar";
 import { useCallback, useState } from "react";
 import Menuitem from "./Menuitem";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
+import LoginModal from "../modals/LoginModal";
+import useLoginModal from "@/app/hooks/useLoginModal";
 
 const UserMenu = () => {
   const registerModal = useRegisterModal();
+  const loginModal = useLoginModal();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = useCallback(() => {
@@ -32,7 +35,7 @@ const UserMenu = () => {
         <div className="absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm">
           <div className="flex flex-col cursor-pointer">
             <>
-              <Menuitem onClick={() => {}} label="Login" />
+              <Menuitem onClick={loginModal.onOpen} label="Login" />
               <Menuitem onClick={registerModal.onOpen} label="Sign up" />
             </>
           </div>
