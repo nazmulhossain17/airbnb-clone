@@ -1,6 +1,5 @@
 "use client";
 import { AiOutlineMenu } from "react-icons/ai";
-import Avater from "../Avatar";
 import { useCallback, useState } from "react";
 import Menuitem from "./Menuitem";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
@@ -10,6 +9,7 @@ import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import useRentModal from "@/app/hooks/useRentModal";
 import { SafeUser } from "@/app/types";
+import Avatar from "../Avatar";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -76,7 +76,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
         >
           <AiOutlineMenu />
           <div className="hidden md:block">
-            {/* <Avatar src={currentUser?.image} /> */}
+            <Avatar src={currentUser?.image} />
           </div>
         </div>
       </div>
