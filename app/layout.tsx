@@ -29,13 +29,13 @@ export default async function RootLayout({
       <body className={font.className}>
         <ClientOnly>
           <ToasterProvider />
-          <RentModal />
           <LoginModal />
           <RegisterModal />
+          <RentModal />
           {/* <Modal actionLabel="Submit" title="Welcome" isOpen /> */}
           <Navbar currentUser={currentUser} />
         </ClientOnly>
-        {children}
+        <div className="pb-20 pt-28">{children}</div>
       </body>
     </html>
   );

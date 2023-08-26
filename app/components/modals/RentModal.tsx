@@ -60,13 +60,13 @@ const RentModal = () => {
   const bathroomCount = watch("bathroomCount");
   const imageSrc = watch("imageSrc");
 
-  //   const Map = useMemo(
-  //     () =>
-  //       dynamic(() => import("../Map"), {
-  //         ssr: false,
-  //       }),
-  //     [location]
-  //   );
+  const Map = useMemo(
+    () =>
+      dynamic(() => import("../Map"), {
+        ssr: false,
+      }),
+    [location]
+  );
 
   const setCustomValue = (id: string, value: any) => {
     setValue(id, value, {
@@ -132,13 +132,13 @@ const RentModal = () => {
       />
       <div
         className="
-            grid 
-            grid-cols-1 
-            md:grid-cols-2 
-            gap-3
-            max-h-[50vh]
-            overflow-y-auto
-          "
+          grid 
+          grid-cols-1 
+          md:grid-cols-2 
+          gap-3
+          max-h-[50vh]
+          overflow-y-auto
+        "
       >
         {categories.map((item) => (
           <div key={item.label} className="col-span-1">
@@ -165,7 +165,7 @@ const RentModal = () => {
           value={location}
           onChange={(value) => setCustomValue("location", value)}
         />
-        {/* <Map center={location?.latlng} /> */}
+        <Map center={location?.latlng} />
       </div>
     );
   }
@@ -264,6 +264,7 @@ const RentModal = () => {
       </div>
     );
   }
+
   return (
     <Modal
       disabled={isLoading}
