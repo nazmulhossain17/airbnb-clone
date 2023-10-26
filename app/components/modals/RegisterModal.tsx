@@ -13,6 +13,7 @@ import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import Button from "../Button";
 import useLoginModal from "@/app/hooks/useLoginModal";
+import LoginModal from "./LoginModal";
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
@@ -39,6 +40,7 @@ const RegisterModal = () => {
       .then(() => {
         toast.success("Registered!");
         registerModal.onClose();
+        loginModal.onOpen();
       })
       .catch((error) => {
         toast.error(error);
