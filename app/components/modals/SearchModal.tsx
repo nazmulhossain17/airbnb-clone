@@ -21,8 +21,8 @@ enum STEPS {
 
 const SearchModal = () => {
   const router = useRouter();
-  const params = useSearchParams();
   const searchModal = useSearchModal();
+  const params = useSearchParams();
 
   const [step, setStep] = useState(STEPS.LOCATION);
 
@@ -41,7 +41,7 @@ const SearchModal = () => {
       dynamic(() => import("../Map"), {
         ssr: false,
       }),
-    [location]
+    []
   );
 
   const onBack = useCallback(() => {
@@ -178,6 +178,7 @@ const SearchModal = () => {
       </div>
     );
   }
+
   return (
     <Modal
       isOpen={searchModal.isOpen}

@@ -30,7 +30,8 @@ const ListingReservation: React.FC<ListingReservationProps> = ({
         rounded-xl 
         border-[1px]
       border-neutral-200 
-        overflow-hidden"
+        overflow-hidden
+      "
     >
       <div
         className="
@@ -58,7 +59,8 @@ const ListingReservation: React.FC<ListingReservationProps> = ({
           items-center 
           justify-between
           font-semibold
-          text-lg"
+          text-lg
+        "
       >
         <div>Total</div>
         <div>$ {totalPrice}</div>
