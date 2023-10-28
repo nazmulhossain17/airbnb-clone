@@ -10,6 +10,7 @@ interface HomeProps {
 }
 
 const Home = async ({ searchParams }: HomeProps) => {
+  console.log(searchParams);
   const listings = await getListings(searchParams);
   const currentUser = await getCurrentUser();
 
@@ -51,3 +52,5 @@ const Home = async ({ searchParams }: HomeProps) => {
 };
 
 export default Home;
+
+export const dynamic = "force-dynamic";
