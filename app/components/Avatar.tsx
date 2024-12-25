@@ -5,7 +5,7 @@ import Image from "next/image";
 interface AvaterProps {
   src?: string | null | undefined;
 }
-
+// Avater
 const Avater: React.FC<AvaterProps> = ({ src }) => {
   return (
     <Image
