@@ -15,9 +15,15 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "User not authenticated" }, { status: 401 });
     }
 
-    // Extract `listingId` from the request body
-    const body = await request.json();
-    const { listingId }: IParams = body;
+    // Parse the request body safely
+    let body: IParams;
+    try {
+      body = await request.json();
+    } catch (error) {
+      return NextResponse.json({ error: "Invalid or missing JSON body" }, { status: 400 });
+    }
+
+    const { listingId } = body;
 
     if (!listingId || typeof listingId !== "string") {
       return NextResponse.json({ error: "Invalid listing ID" }, { status: 400 });
@@ -47,9 +53,15 @@ export async function DELETE(request: Request) {
       return NextResponse.json({ error: "User not authenticated" }, { status: 401 });
     }
 
-    // Extract `listingId` from the request body
-    const body = await request.json();
-    const { listingId }: IParams = body;
+    // Parse the request body safely
+    let body: IParams;
+    try {
+      body = await request.json();
+    } catch (error) {
+      return NextResponse.json({ error: "Invalid or missing JSON body" }, { status: 400 });
+    }
+
+    const { listingId } = body;
 
     if (!listingId || typeof listingId !== "string") {
       return NextResponse.json({ error: "Invalid listing ID" }, { status: 400 });
